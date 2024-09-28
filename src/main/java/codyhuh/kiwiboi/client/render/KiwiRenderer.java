@@ -16,7 +16,7 @@ import software.bernie.geckolib.renderer.GeoEntityRenderer;
 public class KiwiRenderer extends GeoEntityRenderer<Kiwi> {
 
     public KiwiRenderer(EntityRendererProvider.Context renderManager) {
-        super(renderManager, new DefaultedEntityGeoModel<>(new ResourceLocation(KiwiBoi.MOD_ID, "kiwi")));
+        super(renderManager, new DefaultedEntityGeoModel<>(ResourceLocation.fromNamespaceAndPath(KiwiBoi.MOD_ID, "kiwi")));
     }
 
     @Override
@@ -24,9 +24,8 @@ public class KiwiRenderer extends GeoEntityRenderer<Kiwi> {
         return RenderType.entityTranslucent(texture);
     }
 
-    @Override
-    public void preRender(PoseStack poseStack, Kiwi animatable, BakedGeoModel model, MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-        super.preRender(poseStack, animatable, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, red, green, blue, alpha);
+    public void preRender(PoseStack poseStack, Kiwi animatable, BakedGeoModel model, MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, int colour) {
+        super.preRender(poseStack, animatable, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, colour);
 
         if (animatable.isBaby()) {
             poseStack.scale(0.5F, 0.5F, 0.5F);
