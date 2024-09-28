@@ -4,11 +4,11 @@ import codyhuh.kiwiboi.KiwiBoi;
 import codyhuh.kiwiboi.client.render.KiwiRenderer;
 import codyhuh.kiwiboi.registry.KBEntities;
 import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 
-@Mod.EventBusSubscriber(modid = KiwiBoi.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = KiwiBoi.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class ClientEvents {
 
     @SubscribeEvent
